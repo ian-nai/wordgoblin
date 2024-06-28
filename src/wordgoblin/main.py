@@ -140,6 +140,3 @@ class wordgoblin:
                     match_list.append(checked_var)
 
             return match_list
-
-
-print(wordgoblin.check_dict("arn"))
