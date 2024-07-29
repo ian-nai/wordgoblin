@@ -1,0 +1,1 @@
+from wordgoblin import goblin
