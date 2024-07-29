@@ -1,5 +1,6 @@
 import unittest
-from src.wordgoblin.main import wordgoblin
+import wordgoblin
+from wordgoblin import goblin
 
 class TestClient(unittest.TestCase):
 
@@ -15,22 +16,22 @@ class TestClient(unittest.TestCase):
     
         
     def test_dict_oneArg(self):
-        assert wordgoblin.check_dict(TestClient.sample_letters) == ['arn', 'arna', 'nar', 'narr', 'narra', 'raanan', 'ran', 'rana', 'rann']
+        assert wordgoblin.goblin.check_dict(TestClient.sample_letters) == ['arn', 'arna', 'nar', 'narr', 'narra', 'raanan', 'ran', 'rana', 'rann']
 
     def test_dict_wordSize(self):
-        assert wordgoblin.check_dict(TestClient.sample_letters, 3) == ['arn', 'nar', 'ran']
+        assert wordgoblin.goblin.check_dict(TestClient.sample_letters, 3) == ['arn', 'nar', 'ran']
 
     def test_dict_customDict(self):
-        assert wordgoblin.check_dict(TestClient.sample_letters, TestClient.dict_filename) == ['ran', 'aran']
+        assert wordgoblin.goblin.check_dict(TestClient.sample_letters, TestClient.dict_filename) == ['ran', 'aran']
 
     def test_dict_customDict_wordSize(self):
-        assert wordgoblin.check_dict(TestClient.sample_letters, TestClient.dict_filename, 4) == ['aran']
+        assert wordgoblin.goblin.check_dict(TestClient.sample_letters, TestClient.dict_filename, 4) == ['aran']
 
     def test_list_twoArgs(self):
-        assert wordgoblin.check_list(TestClient.sample_letters, TestClient.test_list) == ['aran', 'ran']
+        assert wordgoblin.goblin.check_list(TestClient.sample_letters, TestClient.test_list) == ['aran', 'ran']
 
     def test_list_wordSize(self):
-        assert wordgoblin.check_list(TestClient.sample_letters, TestClient.test_list, 4) == ['aran']
+        assert wordgoblin.goblin.check_list(TestClient.sample_letters, TestClient.test_list, 4) == ['aran']
 
 
 if __name__ == "__main__":
